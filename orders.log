@@ -1,0 +1,58 @@
+
+SQL*Loader: Release 10.2.0.1.0 - Production on Thu Nov 5 13:18:23 2026
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Control File:   orders.ctl
+Data File:      olist_orders_dataset.csv
+  Bad File:     olist_orders_dataset.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table ORDERS, loaded from every logical record.
+Insert option in effect for this table: INSERT
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+ORDER_ID                            FIRST     *   ,  O(") CHARACTER            
+CUSTOMER_ID                          NEXT     *   ,  O(") CHARACTER            
+ORDER_STATUS                         NEXT     *   ,  O(") CHARACTER            
+ORDER_PURCHASE_TIMESTAMP             NEXT     *   ,  O(") CHARACTER            
+ORDER_APPROVED_AT                    NEXT     *   ,  O(") CHARACTER            
+ORDER_DELIVERED_CARRIER_DATE         NEXT     *   ,  O(") CHARACTER            
+ORDER_DELIVERED_CUSTOMER_DATE        NEXT     *   ,  O(") CHARACTER            
+ORDER_ESTIMATED_DELIVERY_DATE        NEXT     *   ,  O(") CHARACTER            
+
+Record 39520: Rejected - Error on table ORDERS, column ORDER_PURCHASE_TIMESTAMP.
+ORA-12899: value too large for column "SCOTT"."ORDERS"."ORDER_PURCHASE_TIMESTAMP" (actual: 32, maximum: 30)
+
+
+Table ORDERS:
+  99440 Rows successfully loaded.
+  1 Row not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 132096 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:         99441
+Total logical records rejected:         1
+Total logical records discarded:        0
+
+Run began on Thu Nov 05 13:18:23 2026
+Run ended on Thu Nov 05 13:18:27 2026
+
+Elapsed time was:     00:00:04.21
+CPU time was:         00:00:01.01
